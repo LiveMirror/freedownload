@@ -1,0 +1,14 @@
+Compiling ffmpeg for Windows (using MinGW+MSys):
+
+1. Compile ffmpeg statically with mp3lame support
+Run ffmpeg\configure.sh from MSys.
+Run make
+2. Compile ffmpegdll.c.
+Use these commands (from ffmpeg folder):
+  $ make ffmpeg_opt.o
+  $ make ffmpeg_filter.o
+  $ make cmdutils.o
+  $ gcc -c -std=c99 -I. ../ffmpegdll.c
+  $ windres ../ffmpegdll.rc ffmpegdllrc.o
+  $ gcc -shared -g -Wall -o MediaConverter.dll ffmpegdll.o ffmpegdllrc.o ffmpeg_opt.o ffmpeg_filter.o cmdutils.o libpostproc/postprocess.o -L./libswscale -lswscale -L./libavdevice -lavdevice -L./libavformat -lavformat -L./libavfilter -lavfilter -L./libavcodec -lavcodec -L./libavutil -lavutil -lws2_32 -lpsapi -lavicap32 -lmp3lame -L./libswresample -lswresample -liconv
+  $ strip -s MediaConverter.dll

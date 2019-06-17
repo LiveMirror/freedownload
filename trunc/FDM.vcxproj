@@ -1,0 +1,1548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_v90|Win32">
+      <Configuration>Release_v90</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1DC811D6-8228-4C28-AB24-10F667F8E785}</ProjectGuid>
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>AtlProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfAtl>Static</UseOfAtl>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfAtl>Static</UseOfAtl>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfAtl>Static</UseOfAtl>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\bin\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">
+    <OutDir>.\bin\$(Configuration)\</OutDir>
+    <IntDir>.\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;.\DirectX.SDK\8.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;.\DirectX.SDK\8.0\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\bin\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>include.add;include.add\dshow;$(BOOST_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;CURL_STATICLIB;USE_SSLEAY;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);NOCRYPT;NOUNCRYPT</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\FDM.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions>/Zm200</AdditionalOptions>
+      <BasicRuntimeChecks>
+      </BasicRuntimeChecks>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalIncludeDirectories>./uploader/fum/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\bin\Release\fdm.tlb</TypeLibraryName>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\FDM.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>Lib.add;$(BOOST_ROOT)\stage\lib;$(BOOST_ROOT)\lib32-msvc-10.0;%(AdditionalLibraryDirectories);$(BOOST_ROOT)\lib32-msvc-12.0</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PartMediaPreview/Release/PartMediaPreview.lib;FDMCustomized/FDMCustomized_lib/Release/FDMCustomized_lib.lib;InetFile/Release/inetfile.lib;Mswsock.lib;Hash\Release\hash.lib;inetfile/curl_lib/release/curl_lib.lib;dxguid.lib;wininet.lib;rasapi32.lib;Ws2_32.lib;htmlhelp.lib;winmm.lib;strmiids.lib;Version.lib;Iphlpapi.lib;libeay32-md.lib;ssleay32-md.lib;Msimg32.lib;%(AdditionalDependencies);zlib\$(Configuration)\zlib.lib;dbghelp.lib</AdditionalDependencies>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/MAPINFO:EXPORTS </AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <TypeLibraryFile>.\bin\Release\fdm.tlb</TypeLibraryFile>
+      <AdditionalManifestDependencies>type='Win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='X86' publicKeyToken='6595b64144ccf1df' language='*';%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>include.add;include.add\dshow;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;CURL_STATICLIB;USE_SSLEAY;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);NOCRYPT;NOUNCRYPT</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/Zm200</AdditionalOptions>
+      <BasicRuntimeChecks>
+      </BasicRuntimeChecks>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalIncludeDirectories>./uploader/fum/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\bin\$(Configuration)\fdm.tlb</TypeLibraryName>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>Lib.add;%(AdditionalLibraryDirectories);$(BOOST_ROOT)\lib32-msvc-12.0</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PartMediaPreview/$(Configuration)/PartMediaPreview.lib;FDMCustomized/FDMCustomized_lib/$(Configuration)/FDMCustomized_lib.lib;InetFile/$(Configuration)/inetfile.lib;alsfolderbrowser.lib;Mswsock.lib;Hash\$(Configuration)\hash.lib;inetfile/curl_lib/$(Configuration)/curl_lib.lib;dxguid.lib;wininet.lib;rasapi32.lib;Ws2_32.lib;htmlhelp.lib;winmm.lib;strmiids.lib;Version.lib;Iphlpapi.lib;libeay32.lib;ssleay32.lib;Msimg32.lib;%(AdditionalDependencies);zlib.lib;dbghelp.lib</AdditionalDependencies>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalOptions>/MAPINFO:EXPORTS </AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <AdditionalManifestDependencies>type='Win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='X86' publicKeyToken='6595b64144ccf1df' language='*';%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <TypeLibraryFile>.\bin\$(Configuration)\fdm.tlb</TypeLibraryFile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>include.add;include.add\dshow;$(BOOST_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;CURL_STATICLIB;USE_SSLEAY;%(PreprocessorDefinitions);NOCRYPT;NOUNCRYPT</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile>.\Debug\FDM.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <AdditionalOptions>/Zm200</AdditionalOptions>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalIncludeDirectories>./uploader/fum/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\bin\Debug\fdm.tlb</TypeLibraryName>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0419</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\FDM.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>Lib.add;$(BOOST_ROOT)\stage\lib;$(BOOST_ROOT)\lib32-msvc-10.0;%(AdditionalLibraryDirectories);$(BOOST_ROOT)\lib32-msvc-12.0</AdditionalLibraryDirectories>
+      <AdditionalDependencies>PartMediaPreview\Debug\PartMediaPreview.lib;FDMCustomized/FDMCustomized_lib/Debug/FDMCustomized_lib.lib;InetFile\Debug\inetfile.lib;Hash\Debug\hash.lib;InetFile\curl_lib\debug\curl_lib.lib;dxguid.lib;wininet.lib;rasapi32.lib;Ws2_32.lib;htmlhelp.lib;winmm.lib;strmiids.lib;Version.lib;Iphlpapi.lib;libeay32d.lib;ssleay32d.lib;Msimg32.lib;%(AdditionalDependencies);zlib\$(Configuration)\zlib.lib;dbghelp.lib</AdditionalDependencies>
+      <TypeLibraryFile>.\bin\Release\fdm.tlb</TypeLibraryFile>
+      <AdditionalManifestDependencies>type='Win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='X86' publicKeyToken='6595b64144ccf1df' language='*';%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AERDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="AlsFolderBrowser.cpp" />
+    <ClCompile Include="AppStatusBar.cpp">
+    </ClCompile>
+    <ClCompile Include="BtDld_Files.cpp">
+    </ClCompile>
+    <ClCompile Include="BtDld_General.cpp">
+    </ClCompile>
+    <ClCompile Include="BtDld_Misc.cpp">
+    </ClCompile>
+    <ClCompile Include="BtDld_Seeding.cpp">
+    </ClCompile>
+    <ClCompile Include="BtDldSheet.cpp">
+    </ClCompile>
+    <ClCompile Include="CBD_SeeResultsDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="CFDM.cpp">
+    </ClCompile>
+    <ClCompile Include="ChildView.cpp">
+    </ClCompile>
+    <ClCompile Include="ClientAreaWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="CmdHistorySaver.cpp" />
+    <ClCompile Include="ColumnTreeCtrl.cpp">
+    </ClCompile>
+    <ClCompile Include="ComboBox_Ex.cpp">
+    </ClCompile>
+    <ClCompile Include="ComboBoxTreeCtrl.cpp">
+    </ClCompile>
+    <ClCompile Include="CreateBatchDownload.cpp">
+    </ClCompile>
+    <ClCompile Include="CreateDownloadDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="CreateDownloadFromTorrentFileDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="CreateDownloadListDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="CreateDownloadsDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="CreateTPDownloadDlg.cpp" />
+    <ClCompile Include="CsvParser.cpp" />
+    <ClCompile Include="DDRDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="DialDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgConnectionSpeedInfo.cpp" />
+    <ClCompile Include="DlgSpecifyNetworkSpeedValue.cpp" />
+    <ClCompile Include="DlgTumSettingsPerDirection.cpp" />
+    <ClCompile Include="Dlg_CheckFileIntegrity.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_CheckFileIntegrity_Progress.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_CheckFileIntegrity_Result.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_ChooseGroup.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Convert.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_CreateFVDownload.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_CreateNewTorrent.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Download.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Download_OnHide.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_MakePortableVer.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Opinions.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads_Bittorrent.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads_Flv.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads_Mirrors.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads_Monitoring.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads_Network.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads_NewDld.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Downloads_TimeLimit.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_General.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_General_History.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_General_Misc.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_General_Misc_Advanced.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Notifications.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_Page.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Options_SiteMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_SavePassword.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_SetBatchNumbers.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_ShutdownType.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_SpreadHelp.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_SpreadHelp2.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_SpreadHelp2_wb_Events.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_SpreadHelp2_wb_UIHandler.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_SpreadHelp_LinkCode.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_TUMChanged.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Unpack_AskOverwrite.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_Unpack_InstAddPack.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_UnpackProgress.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_UnpackSettings.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_WPD_IgnoreList.cpp">
+    </ClCompile>
+    <ClCompile Include="Dlg_WPD_IL_Add.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgCreateFlvDownloads.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgCreateFlvDownloadsByWebPageUrl.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgCustomizeIEMenu.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgDeletedProperties.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgDL.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgDownloadsHistory.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgElevateRequired.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgExportDownloads.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgExportHistory.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgExtensionsFilter.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgFind.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgFindAdvanced.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgPI2.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgPI2_IfRemind.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgPI2_SureToCancel.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgPI2_WbCustomization.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgProgramOptions.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgSounds.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgT1ToT2.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgVidMan.cpp">
+    </ClCompile>
+    <ClCompile Include="DlgVidSeek.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadAlrExistsDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloaderProperties_MonitorPage_SkipList.cpp" />
+    <ClCompile Include="DownloadProperties.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadProperties_ConnectionPage.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadProperties_GeneralPage.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadProperties_IntegrityPage.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadProperties_MirrorsPage.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadProperties_MiscPage.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadProperties_ProtocolPage.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadProperties_ProxyPage.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadPropertiesSheet.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Bittorrent.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Bittorrent_Files.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Bittorrent_General.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Bittorrent_Peers.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Deleted.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Downloads.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Groups.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_History.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Info.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_InfoFrame.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Log.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Opinions.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Opinions_WBEvents.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Progress.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_Tasks.cpp">
+    </ClCompile>
+    <ClCompile Include="Downloads_VideoPreview.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadsGroupsComboBox.cpp">
+    </ClCompile>
+    <ClCompile Include="DownloadsWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="EnterKeyDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="FDCButton.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmApp.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmBalloon.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmBalloon_Content.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmBalloon_OnDownloadDone.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmBalloonContent.cpp">
+    </ClCompile>
+    <ClCompile Include="FDMDownload.cpp">
+    </ClCompile>
+    <ClCompile Include="FDMDownloadsStat.cpp">
+    </ClCompile>
+    <ClCompile Include="FDMFlashVideoDownloads.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmFlvDownload.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmTorrentFilesRcvr.cpp">
+    </ClCompile>
+    <ClCompile Include="FdmUiWindow.cpp" />
+    <ClCompile Include="FDMUploader.cpp">
+    </ClCompile>
+    <ClCompile Include="FDMUploadPackage.cpp">
+    </ClCompile>
+    <ClCompile Include="FlashVideoDownloadsWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="FloatingInfo_ListCtrlWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="FloatingInfoWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="FloatingWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="FloatingWndDropTarget.cpp">
+    </ClCompile>
+    <ClCompile Include="FloatingWndsThread.cpp">
+    </ClCompile>
+    <ClCompile Include="FolderBrowser.cpp">
+    </ClCompile>
+    <ClCompile Include="fsAppSettings.cpp">
+    </ClCompile>
+    <ClCompile Include="fsArchiveFileStream.cpp">
+    </ClCompile>
+    <ClCompile Include="fsArchiveInternetStream.cpp">
+    </ClCompile>
+    <ClCompile Include="fsArchiveRebuilder.cpp">
+    </ClCompile>
+    <ClCompile Include="fsArchiveRebuilderStream.cpp">
+    </ClCompile>
+    <ClCompile Include="fsAutorunMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsClipboardCatchMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsClipboardMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsCmdHistoryMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsCommandLineParser.cpp">
+    </ClCompile>
+    <ClCompile Include="fsContextHelpMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDialogsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDirectXVersion.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDldFilter.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDownload.cpp" />
+    <ClCompile Include="fsDownloadMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDownloadRegSaver.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDownloads_GroupsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDownloadsHistoryMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsDownloadsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsEventsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsFDMCmdLineParser.cpp">
+    </ClCompile>
+    <ClCompile Include="fsFindDownloadMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsHistoriesMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsIECatchMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsIEContextMenuMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsIEUserAgent.cpp">
+    </ClCompile>
+    <ClCompile Include="fsInternetDownloader.cpp">
+    </ClCompile>
+    <ClCompile Include="fsInternetFileListMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsMFCLangMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsMirrorURLsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsMutex.cpp">
+    </ClCompile>
+    <ClCompile Include="fsODMenu.cpp">
+    </ClCompile>
+    <ClCompile Include="fsOpNetIntegrationMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsPluginMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsRASMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsScheduleMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsShellBrowsersEvents.cpp">
+    </ClCompile>
+    <ClCompile Include="fsShellWindowsEvents.cpp">
+    </ClCompile>
+    <ClCompile Include="fsSitePingMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsSitesMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsSoundsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsSpeedMeter.cpp">
+    </ClCompile>
+    <ClCompile Include="fsTicksMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsTrayIconMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsUpdateMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsUrlsToDownloadRegKeyMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsWebPageDownloader.cpp">
+    </ClCompile>
+    <ClCompile Include="fsWebPageDownloadsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="fsZipArchiveFastRebuilder.cpp">
+    </ClCompile>
+    <ClCompile Include="fsZipArchiveRebuilder.cpp">
+    </ClCompile>
+    <ClCompile Include="ImportManager.cpp" />
+    <ClCompile Include="ImportWizardPropertySheet.cpp" />
+    <ClCompile Include="IwManagersPropertyPage.cpp" />
+    <ClCompile Include="IwProgressPropertyPage.cpp" />
+    <ClCompile Include="IwResultPropertyPage.cpp" />
+    <ClCompile Include="MemHandleGuard.cpp" />
+    <ClCompile Include="OrbitSupplier.cpp" />
+    <ClCompile Include="orbit_download.cpp" />
+    <ClCompile Include="sqlite\sqlite3.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StateInfo.cpp" />
+    <ClCompile Include="TorrentMoveErrorDlg.cpp" />
+    <ClCompile Include="to_link.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TpDldSheet.cpp" />
+    <ClCompile Include="TpDld_General.cpp" />
+    <ClCompile Include="vmsAppGlobalObjects.cpp" />
+    <ClCompile Include="vmsAVMergerFFMPEG.cpp" />
+    <ClCompile Include="vmsAVMergingMgr.cpp" />
+    <ClCompile Include="vmsChromeExtensionInstaller.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Bittorrent\boost_1_44;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">Bittorrent\boost_1_44;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Bittorrent\boost_1_44;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="vmsDownloaderSecCheckFailureHandler.cpp" />
+    <ClCompile Include="vmsDownloadTools.cpp" />
+    <ClCompile Include="vmsElevatedFdm.cpp" />
+    <ClCompile Include="vmsFdmBrowserPluginMonitoring.cpp" />
+    <ClCompile Include="vmsFdmFilesDeleter.cpp" />
+    <ClCompile Include="vmsFdmOpNetIntegrationMgr.cpp" />
+    <ClCompile Include="vmsFdmSimpleDownloader.cpp" />
+    <ClCompile Include="vmsFdmUiDetails.cpp" />
+    <ClCompile Include="vmsFdmURLDownloader.cpp" />
+    <ClCompile Include="vmsFFMPEG.cpp" />
+    <ClCompile Include="vmsFirefoxExtensionUpdateMgr.cpp" />
+    <ClCompile Include="vmsLogger.cpp" />
+    <ClCompile Include="vmsMagnetExtension.cpp" />
+    <ClCompile Include="vmsThreadPoolAsio.cpp" />
+    <ClCompile Include="vmsTpDownloadMgr.cpp" />
+    <ClCompile Include="Uploader\FUM\fuminterfaces_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FVDownloads_Tasks.cpp">
+    </ClCompile>
+    <ClCompile Include="GroupDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="grutil.cpp">
+    </ClCompile>
+    <ClCompile Include="HFE_Address.cpp">
+    </ClCompile>
+    <ClCompile Include="HFE_FileList.cpp">
+    </ClCompile>
+    <ClCompile Include="HFE_ListLog.cpp">
+    </ClCompile>
+    <ClCompile Include="HFE_Log.cpp">
+    </ClCompile>
+    <ClCompile Include="HFE_ProtocolPage.cpp">
+    </ClCompile>
+    <ClCompile Include="HFESheet.cpp">
+    </ClCompile>
+    <ClCompile Include="HFEWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="iefdm\iefdmdm\iefdmdm_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="inetutil.cpp">
+    </ClCompile>
+    <ClCompile Include="ListCtrlEx.cpp">
+    </ClCompile>
+    <ClCompile Include="LoginDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+    </ClCompile>
+    <ClCompile Include="mfchelp.cpp">
+    </ClCompile>
+    <ClCompile Include="misc.cpp">
+    </ClCompile>
+    <ClCompile Include="MyBalloon.cpp">
+    </ClCompile>
+    <ClCompile Include="MyBalloon_Content.cpp">
+    </ClCompile>
+    <ClCompile Include="MyMessageBox.cpp">
+    </ClCompile>
+    <ClCompile Include="NOWDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="PlugFrame2Tabs.cpp">
+    </ClCompile>
+    <ClCompile Include="PluginFrame2.cpp">
+    </ClCompile>
+    <ClCompile Include="Prg_Data.cpp">
+    </ClCompile>
+    <ClCompile Include="Prg_GeneralPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Prg_GeneralPage_FWDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="Prg_HistoryPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Prg_MiscPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Prg_SkinsPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Prg_UpdatePage.cpp">
+    </ClCompile>
+    <ClCompile Include="PrgSheet.cpp">
+    </ClCompile>
+    <ClCompile Include="Schedule_AdvancedPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Schedule_HTSPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Schedule_WTSPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Scheduler_Log.cpp">
+    </ClCompile>
+    <ClCompile Include="ScheduleSheet.cpp">
+    </ClCompile>
+    <ClCompile Include="SCRDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="Sheduler_Tasks.cpp">
+    </ClCompile>
+    <ClCompile Include="ShedulerWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="shockwaveflash.cpp">
+    </ClCompile>
+    <ClCompile Include="SiteManager_GeneralPage.cpp">
+    </ClCompile>
+    <ClCompile Include="SiteManager_PasswordsPage.cpp">
+    </ClCompile>
+    <ClCompile Include="SiteManagerSheet.cpp">
+    </ClCompile>
+    <ClCompile Include="Sites_AdvancedPage.cpp">
+    </ClCompile>
+    <ClCompile Include="Sites_GeneralPage.cpp">
+    </ClCompile>
+    <ClCompile Include="SitesSheet.cpp">
+    </ClCompile>
+    <ClCompile Include="SitesWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="SmallTipWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="SpiderAddPageDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="SpiderTasks.cpp">
+    </ClCompile>
+    <ClCompile Include="SpiderTaskTree.cpp">
+    </ClCompile>
+    <ClCompile Include="SpiderWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="system.cpp">
+    </ClCompile>
+    <ClCompile Include="ToolBarEx.cpp">
+    </ClCompile>
+    <ClCompile Include="Torrents_Tasks.cpp">
+    </ClCompile>
+    <ClCompile Include="TorrentsWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="TrayIconPosition.cpp">
+    </ClCompile>
+    <ClCompile Include="TreeCtrlEx.cpp">
+    </ClCompile>
+    <ClCompile Include="UIThread.cpp">
+    </ClCompile>
+    <ClCompile Include="UpdateDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="UploadsWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="UrlWithLoginDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="UrlWnd.cpp">
+    </ClCompile>
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="UtorrentSupplier.cpp" />
+    <ClCompile Include="VideoWindow.cpp">
+    </ClCompile>
+    <ClCompile Include="vms7zipArchive.cpp">
+    </ClCompile>
+    <ClCompile Include="vms7zipArchiveExtractCallback.cpp">
+    </ClCompile>
+    <ClCompile Include="vms7zipFormatDLL.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsAnimatedGIF.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsAppSettingsStore.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsAppTipsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsAppUtil.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsArchive.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsArchiveCallback.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsArchiveMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsArchiveRAR.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsBatchList.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsBtDownloadManager.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsBtSupport.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsComDLL.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDataFile.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDialogHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDLL.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDocHostUIHandler.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDownloadMgrEx.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDownloadsGroupsMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDownloadsListHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsDrawHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFdmApiDownloadImpl.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFdmApiDownloadsMgrImpl.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFdmApiImpl.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFdmAppMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFileExtensionInOs.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFileRecentList.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFilesToDelete.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFirefoxMonitoring.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsFlvSniffInjector.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsIeHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsImage.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsImage_CtxFree.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsInetUtils.cpp" />
+    <ClCompile Include="vmsInternetSession.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsIpHelper.cpp" />
+    <ClCompile Include="vmsMaliciousDownloadChecker.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsMaximumSpeedMeter.cpp" />
+    <ClCompile Include="vmsMediaConverter.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsMediaConvertMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsMetalinkFile.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsMozillaPrefs.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsNotEverywhereSupportedFunctions.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsPersistableListOfDownloads.cpp" />
+    <ClCompile Include="vmsPersistObject.cpp" />
+    <ClCompile Include="vmsPluginSupport.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsProcessesInjector.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsRegisteredApp.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsRenderer.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsSecurity.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsSimpleFileDownloader.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsSingleLineTooltip.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsSkinMgr.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsSpeedTracker.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsStringList.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsStringParser.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsStringRecentList.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsSystem.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsTheme.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsTickCount.cpp" />
+    <ClCompile Include="vmsTorrentExtension.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsTrafficUsageModeMgr.cpp" />
+    <ClCompile Include="vmsTreeCtrlHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUiFonts.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUiLinkWindow.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUiStaticTextWindow.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUiWindow.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUiWindowsHoster.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUnRARDLL.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUploaderDllPersist.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUploadsDllCaller.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsUploadsDllCallerSettings.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsVideoMonitoringModulesUiManager.cpp" />
+    <ClCompile Include="vmsVideoSiteHtmlCodeParser.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsWebBrowserEvents.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsWindowsStatusBar.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsXmlHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="vmsYouTubeDownloadsMgr.cpp" />
+    <ClCompile Include="vmsYouTubeParserDllMgr.cpp" />
+    <ClCompile Include="vmsYouTubeParserErrorSenderPOST.cpp" />
+    <ClCompile Include="vmsYouTubePreviewIconLoader.cpp" />
+    <ClCompile Include="vmsYouTubeURLReloadingTask.cpp" />
+    <ClCompile Include="WaitDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="WaitDlg2.cpp" />
+    <ClCompile Include="WaitForConfirmationDlg.cpp">
+    </ClCompile>
+    <ClCompile Include="webbrowser2.cpp">
+    </ClCompile>
+    <ClCompile Include="WebBrowser2Customization.cpp">
+    </ClCompile>
+    <ClCompile Include="WgUrlListReceiver.cpp">
+    </ClCompile>
+    <ClCompile Include="WGUrlReceiver.cpp">
+    </ClCompile>
+    <ClCompile Include="Wnd_Banner.cpp">
+    </ClCompile>
+    <ClCompile Include="Wnd_DownloadProgress.cpp">
+    </ClCompile>
+    <ClCompile Include="Wnd_FDMGetCustVer_Btn.cpp">
+    </ClCompile>
+    <ClCompile Include="WndDlDoneNotification.cpp">
+    </ClCompile>
+    <ClCompile Include="WndLog.cpp">
+    </ClCompile>
+    <ClCompile Include="WndSplitter.cpp">
+    </ClCompile>
+    <ClCompile Include="WPDS_FilesPage.cpp">
+    </ClCompile>
+    <ClCompile Include="WPDS_GeneralPage.cpp">
+    </ClCompile>
+    <ClCompile Include="WPDS_ImagesPages.cpp">
+    </ClCompile>
+    <ClCompile Include="WPDS_Sheet.cpp">
+    </ClCompile>
+    <ClCompile Include="WPDS_WebPagesPage.cpp">
+    </ClCompile>
+    <ClCompile Include="XInfoTip.cpp">
+    </ClCompile>
+    <ClCompile Include="ZipPreviewDlg.cpp">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Fdm.idl">
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">Win32</TargetEnvironment>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="fdm.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release_v90|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OUTDIR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AERDlg.h" />
+    <ClInclude Include="AlsFolderBrowser.h" />
+    <ClInclude Include="AppStatusBar.h" />
+    <ClInclude Include="BtDld_Files.h" />
+    <ClInclude Include="BtDld_General.h" />
+    <ClInclude Include="BtDld_Misc.h" />
+    <ClInclude Include="BtDld_Seeding.h" />
+    <ClInclude Include="BtDldSheet.h" />
+    <ClInclude Include="CBD_SeeResultsDlg.h" />
+    <ClInclude Include="CFDM.h" />
+    <ClInclude Include="ChildView.h" />
+    <ClInclude Include="ClientAreaWnd.h" />
+    <ClInclude Include="CmdHistorySaver.h" />
+    <ClInclude Include="ColumnTreeCtrl.h" />
+    <ClInclude Include="ComboBox_Ex.h" />
+    <ClInclude Include="ComboBoxTreeCtrl.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="CreateBatchDownload.h" />
+    <ClInclude Include="CreateDownloadDlg.h" />
+    <ClInclude Include="CreateDownloadFromTorrentFileDlg.h" />
+    <ClInclude Include="CreateDownloadListDlg.h" />
+    <ClInclude Include="CreateDownloadsDlg.h" />
+    <ClInclude Include="CreateTPDownloadDlg.h" />
+    <ClInclude Include="CsvParser.h" />
+    <ClInclude Include="DDRDlg.h" />
+    <ClInclude Include="DialDlg.h" />
+    <ClInclude Include="dldscommon.h" />
+    <ClInclude Include="DlgConnectionSpeedInfo.h" />
+    <ClInclude Include="DlgSpecifyNetworkSpeedValue.h" />
+    <ClInclude Include="DlgTumSettingsPerDirection.h" />
+    <ClInclude Include="Dlg_CheckFileIntegrity.h" />
+    <ClInclude Include="Dlg_CheckFileIntegrity_Progress.h" />
+    <ClInclude Include="Dlg_CheckFileIntegrity_Result.h" />
+    <ClInclude Include="Dlg_ChooseGroup.h" />
+    <ClInclude Include="Dlg_Convert.h" />
+    <ClInclude Include="Dlg_CreateFVDownload.h" />
+    <ClInclude Include="Dlg_CreateNewTorrent.h" />
+    <ClInclude Include="Dlg_Download.h" />
+    <ClInclude Include="Dlg_Download_OnHide.h" />
+    <ClInclude Include="Dlg_MakePortableVer.h" />
+    <ClInclude Include="Dlg_Opinions.h" />
+    <ClInclude Include="Dlg_Options.h" />
+    <ClInclude Include="Dlg_Options_Downloads.h" />
+    <ClInclude Include="Dlg_Options_Downloads_Bittorrent.h" />
+    <ClInclude Include="Dlg_Options_Downloads_Flv.h" />
+    <ClInclude Include="Dlg_Options_Downloads_Mirrors.h" />
+    <ClInclude Include="Dlg_Options_Downloads_Monitoring.h" />
+    <ClInclude Include="Dlg_Options_Downloads_Network.h" />
+    <ClInclude Include="Dlg_Options_Downloads_NewDld.h" />
+    <ClInclude Include="Dlg_Options_Downloads_TimeLimit.h" />
+    <ClInclude Include="Dlg_Options_General.h" />
+    <ClInclude Include="Dlg_Options_General_History.h" />
+    <ClInclude Include="Dlg_Options_General_Misc.h" />
+    <ClInclude Include="Dlg_Options_General_Misc_Advanced.h" />
+    <ClInclude Include="Dlg_Options_Notifications.h" />
+    <ClInclude Include="Dlg_Options_Page.h" />
+    <ClInclude Include="Dlg_Options_SiteMgr.h" />
+    <ClInclude Include="Dlg_SavePassword.h" />
+    <ClInclude Include="Dlg_SetBatchNumbers.h" />
+    <ClInclude Include="Dlg_ShutdownType.h" />
+    <ClInclude Include="Dlg_SpreadHelp.h" />
+    <ClInclude Include="Dlg_SpreadHelp2.h" />
+    <ClInclude Include="Dlg_SpreadHelp2_wb_Events.h" />
+    <ClInclude Include="Dlg_SpreadHelp2_wb_UIHandler.h" />
+    <ClInclude Include="Dlg_SpreadHelp_LinkCode.h" />
+    <ClInclude Include="Dlg_TUMChanged.h" />
+    <ClInclude Include="Dlg_Unpack_AskOverwrite.h" />
+    <ClInclude Include="Dlg_Unpack_InstAddPack.h" />
+    <ClInclude Include="Dlg_UnpackProgress.h" />
+    <ClInclude Include="Dlg_UnpackSettings.h" />
+    <ClInclude Include="Dlg_WPD_IgnoreList.h" />
+    <ClInclude Include="Dlg_WPD_IL_Add.h" />
+    <ClInclude Include="DlgCreateFlvDownloads.h" />
+    <ClInclude Include="DlgCreateFlvDownloadsByWebPageUrl.h" />
+    <ClInclude Include="DlgCustomizeIEMenu.h" />
+    <ClInclude Include="DlgDeletedProperties.h" />
+    <ClInclude Include="DlgDL.h" />
+    <ClInclude Include="DlgDownloadsHistory.h" />
+    <ClInclude Include="DlgElevateRequired.h" />
+    <ClInclude Include="DlgExportDownloads.h" />
+    <ClInclude Include="DlgExportHistory.h" />
+    <ClInclude Include="DlgExtensionsFilter.h" />
+    <ClInclude Include="DlgFind.h" />
+    <ClInclude Include="DlgFindAdvanced.h" />
+    <ClInclude Include="DlgPI2.h" />
+    <ClInclude Include="DlgPI2_IfRemind.h" />
+    <ClInclude Include="DlgPI2_SureToCancel.h" />
+    <ClInclude Include="DlgPI2_WbCustomization.h" />
+    <ClInclude Include="DlgProgramOptions.h" />
+    <ClInclude Include="DlgSounds.h" />
+    <ClInclude Include="DlgT1ToT2.h" />
+    <ClInclude Include="DlgVidMan.h" />
+    <ClInclude Include="DlgVidSeek.h" />
+    <ClInclude Include="DownloadAlrExistsDlg.h" />
+    <ClInclude Include="DownloaderProperties_MonitorPage_SkipList.h" />
+    <ClInclude Include="DownloadProperties.h" />
+    <ClInclude Include="DownloadProperties_ConnectionPage.h" />
+    <ClInclude Include="DownloadProperties_GeneralPage.h" />
+    <ClInclude Include="DownloadProperties_IntegrityPage.h" />
+    <ClInclude Include="DownloadProperties_MirrorsPage.h" />
+    <ClInclude Include="DownloadProperties_MiscPage.h" />
+    <ClInclude Include="DownloadProperties_ProtocolPage.h" />
+    <ClInclude Include="DownloadProperties_ProxyPage.h" />
+    <ClInclude Include="DownloadPropertiesSheet.h" />
+    <ClInclude Include="Downloads_Bittorrent.h" />
+    <ClInclude Include="Downloads_Bittorrent_Files.h" />
+    <ClInclude Include="Downloads_Bittorrent_General.h" />
+    <ClInclude Include="Downloads_Bittorrent_Peers.h" />
+    <ClInclude Include="Downloads_Deleted.h" />
+    <ClInclude Include="Downloads_Downloads.h" />
+    <ClInclude Include="Downloads_Groups.h" />
+    <ClInclude Include="Downloads_History.h" />
+    <ClInclude Include="Downloads_Info.h" />
+    <ClInclude Include="Downloads_InfoFrame.h" />
+    <ClInclude Include="Downloads_Log.h" />
+    <ClInclude Include="Downloads_Opinions.h" />
+    <ClInclude Include="Downloads_Opinions_WBEvents.h" />
+    <ClInclude Include="Downloads_Progress.h" />
+    <ClInclude Include="Downloads_Tasks.h" />
+    <ClInclude Include="Downloads_VideoPreview.h" />
+    <ClInclude Include="DownloadsGroupsComboBox.h" />
+    <ClInclude Include="DownloadsWnd.h" />
+    <ClInclude Include="EnterKeyDlg.h" />
+    <ClInclude Include="FDCButton.h" />
+    <ClInclude Include="FdmApp.h" />
+    <ClInclude Include="FdmBalloon.h" />
+    <ClInclude Include="FdmBalloon_Content.h" />
+    <ClInclude Include="FdmBalloon_OnDownloadDone.h" />
+    <ClInclude Include="FdmBalloonContent.h" />
+    <ClInclude Include="FDMDownload.h" />
+    <ClInclude Include="FDMDownloadsStat.h" />
+    <ClInclude Include="FDMFlashVideoDownloads.h" />
+    <ClInclude Include="FdmFlvDownload.h" />
+    <ClInclude Include="FdmTorrentFilesRcvr.h" />
+    <ClInclude Include="FdmUiWindow.h" />
+    <ClInclude Include="FDMUploader.h" />
+    <ClInclude Include="FDMUploadPackage.h" />
+    <ClInclude Include="FlashVideoDownloadsWnd.h" />
+    <ClInclude Include="FloatingInfo_ListCtrlWnd.h" />
+    <ClInclude Include="FloatingInfoWnd.h" />
+    <ClInclude Include="FloatingWnd.h" />
+    <ClInclude Include="FloatingWndDropTarget.h" />
+    <ClInclude Include="FloatingWndsThread.h" />
+    <ClInclude Include="FolderBrowser.h" />
+    <ClInclude Include="fsAppSettings.h" />
+    <ClInclude Include="fsArchiveFileStream.h" />
+    <ClInclude Include="fsArchiveInternetStream.h" />
+    <ClInclude Include="fsArchiveRebuilder.h" />
+    <ClInclude Include="fsArchiveRebuilderStream.h" />
+    <ClInclude Include="fsAutorunMgr.h" />
+    <ClInclude Include="fsClipboardCatchMgr.h" />
+    <ClInclude Include="fsClipboardMgr.h" />
+    <ClInclude Include="fsCmdHistoryMgr.h" />
+    <ClInclude Include="fsCommandLineParser.h" />
+    <ClInclude Include="fsContextHelpMgr.h" />
+    <ClInclude Include="fsDialogsMgr.h" />
+    <ClInclude Include="fsDirectXVersion.h" />
+    <ClInclude Include="fsDldFilter.h" />
+    <ClInclude Include="fsDownload.h" />
+    <ClInclude Include="fsDownloadMgr.h" />
+    <ClInclude Include="fsDownloadRegSaver.h" />
+    <ClInclude Include="fsDownloads_GroupsMgr.h" />
+    <ClInclude Include="fsDownloadsHistoryMgr.h" />
+    <ClInclude Include="fsDownloadsMgr.h" />
+    <ClInclude Include="fsEventsMgr.h" />
+    <ClInclude Include="fsFDMCmdLineParser.h" />
+    <ClInclude Include="fsFindDownloadMgr.h" />
+    <ClInclude Include="fsHistoriesMgr.h" />
+    <ClInclude Include="fsIECatchMgr.h" />
+    <ClInclude Include="fsIEContextMenuMgr.h" />
+    <ClInclude Include="fsIEUserAgent.h" />
+    <ClInclude Include="fsInternetDownloader.h" />
+    <ClInclude Include="fsInternetFileListMgr.h" />
+    <ClInclude Include="fsLangMgr.h" />
+    <ClInclude Include="fsMFCLangMgr.h" />
+    <ClInclude Include="fsMirrorURLsMgr.h" />
+    <ClInclude Include="fsMutex.h" />
+    <ClInclude Include="fsODMenu.h" />
+    <ClInclude Include="fsOpNetIntegrationMgr.h" />
+    <ClInclude Include="fsPluginMgr.h" />
+    <ClInclude Include="fsRASMgr.h" />
+    <ClInclude Include="fsScheduleMgr.h" />
+    <ClInclude Include="fsSitePingMgr.h" />
+    <ClInclude Include="fsSitesMgr.h" />
+    <ClInclude Include="fsSoundsMgr.h" />
+    <ClInclude Include="fsSpeedMeter.h" />
+    <ClInclude Include="fsTicksMgr.h" />
+    <ClInclude Include="fsTrayIconMgr.h" />
+    <ClInclude Include="fsUpdateMgr.h" />
+    <ClInclude Include="fsUrlsToDownloadRegKeyMgr.h" />
+    <ClInclude Include="fsWebPageDownloader.h" />
+    <ClInclude Include="fsWebPageDownloadsMgr.h" />
+    <ClInclude Include="fsZipArchiveFastRebuilder.h" />
+    <ClInclude Include="fsZipArchiveRebuilder.h" />
+    <ClInclude Include="FVDownloads_Tasks.h" />
+    <ClInclude Include="GroupDlg.h" />
+    <ClInclude Include="grutil.h" />
+    <ClInclude Include="HFE_Address.h" />
+    <ClInclude Include="HFE_FileList.h" />
+    <ClInclude Include="HFE_ListLog.h" />
+    <ClInclude Include="HFE_Log.h" />
+    <ClInclude Include="HFE_ProtocolPage.h" />
+    <ClInclude Include="HFESheet.h" />
+    <ClInclude Include="HFEWnd.h" />
+    <ClInclude Include="ImportManager.h" />
+    <ClInclude Include="ImportWizardPropertySheet.h" />
+    <ClInclude Include="inetutil.h" />
+    <ClInclude Include="IwManagersPropertyPage.h" />
+    <ClInclude Include="IwProgressPropertyPage.h" />
+    <ClInclude Include="IwResultPropertyPage.h" />
+    <ClInclude Include="ListCtrlEx.h" />
+    <ClInclude Include="LoginDlg.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MemHandleGuard.h" />
+    <ClInclude Include="mfchelp.h" />
+    <ClInclude Include="misc.h" />
+    <ClInclude Include="MyBalloon.h" />
+    <ClInclude Include="MyBalloon_Content.h" />
+    <ClInclude Include="MyMessageBox.h" />
+    <ClInclude Include="NOWDlg.h" />
+    <ClInclude Include="OrbitSupplier.h" />
+    <ClInclude Include="orbit_download.h" />
+    <ClInclude Include="PlugFrame2Tabs.h" />
+    <ClInclude Include="plugincmds.h" />
+    <ClInclude Include="PluginFrame2.h" />
+    <ClInclude Include="plugins.h" />
+    <ClInclude Include="Prg_Data.h" />
+    <ClInclude Include="Prg_GeneralPage.h" />
+    <ClInclude Include="Prg_GeneralPage_FWDlg.h" />
+    <ClInclude Include="Prg_HistoryPage.h" />
+    <ClInclude Include="Prg_MiscPage.h" />
+    <ClInclude Include="Prg_SkinsPage.h" />
+    <ClInclude Include="Prg_UpdatePage.h" />
+    <ClInclude Include="PrgSheet.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StateInfo.h" />
+    <ClInclude Include="TorrentMoveErrorDlg.h" />
+    <ClInclude Include="TpDldSheet.h" />
+    <ClInclude Include="TpDld_General.h" />
+    <ClInclude Include="vmsAppFileUpdateInfo.h" />
+    <ClInclude Include="vmsAppGlobalObjects.h" />
+    <ClInclude Include="vmsAVMerger.h" />
+    <ClInclude Include="vmsAVMergerFFMPEG.h" />
+    <ClInclude Include="vmsAVMergingMgr.h" />
+    <ClInclude Include="vmsAVMergingMgrCallback.h" />
+    <ClInclude Include="vmsAVMergingTask.h" />
+    <ClInclude Include="vmsBrowserPluginFileDeleter.h" />
+    <ClInclude Include="vmsChromeExtensionInstaller.h" />
+    <ClInclude Include="vmsDownloaderSecCheckFailureHandler.h" />
+    <ClInclude Include="vmsDownloaderSecCheckFailureIgnoreList.h" />
+    <ClInclude Include="vmsDownloadTools.h" />
+    <ClInclude Include="vmsElevatedFdm.h" />
+    <ClInclude Include="vmsFdmBrowserPluginMonitoring.h" />
+    <ClInclude Include="vmsFdmFilesDeleter.h" />
+    <ClInclude Include="vmsFdmOpNetIntegrationMgr.h" />
+    <ClInclude Include="vmsFdmOptionalModulesBasicManager.h" />
+    <ClInclude Include="vmsFdmSimpleDownloader.h" />
+    <ClInclude Include="vmsFdmUiDetails.h" />
+    <ClInclude Include="vmsFdmURLDownloader.h" />
+    <ClInclude Include="vmsFdmURLDownloadMgr.h" />
+    <ClInclude Include="vmsFdmUtils.h" />
+    <ClInclude Include="vmsFFMPEG.h" />
+    <ClInclude Include="vmsFileDeleter.h" />
+    <ClInclude Include="vmsFirefoxExtensionInfo.h" />
+    <ClInclude Include="vmsFirefoxExtensionUpdateMgr.h" />
+    <ClInclude Include="vmsKnownBrowsers.h" />
+    <ClInclude Include="vmsMagnetExtension.h" />
+    <ClInclude Include="vmsLogger.h" />
+    <ClInclude Include="vmsOptionalModulesBasicDownloader.h" />
+    <ClInclude Include="vmsOptionalModulesBasicInstaller.h" />
+    <ClInclude Include="vmsOptionalModulesDownloader.h" />
+    <ClInclude Include="vmsOptionalModulesInstaller.h" />
+    <ClInclude Include="vmsOptionalModulesList.h" />
+    <ClInclude Include="vmsOptionalModulesManager.h" />
+    <ClInclude Include="vmsResourceDownloader.h" />
+    <ClInclude Include="vmsThreadPool.h" />
+    <ClInclude Include="vmsThreadPoolAsio.h" />
+    <ClInclude Include="vmsThreadPoolTask.h" />
+    <ClInclude Include="vmsTpDownloadMgr.h" />
+    <ClInclude Include="Schedule_AdvancedPage.h" />
+    <ClInclude Include="Schedule_HTSPage.h" />
+    <ClInclude Include="Schedule_WTSPage.h" />
+    <ClInclude Include="Scheduler_Log.h" />
+    <ClInclude Include="ScheduleSheet.h" />
+    <ClInclude Include="SCRDlg.h" />
+    <ClInclude Include="Sheduler_Tasks.h" />
+    <ClInclude Include="ShedulerWnd.h" />
+    <ClInclude Include="shockwaveflash.h" />
+    <ClInclude Include="SiteManager_GeneralPage.h" />
+    <ClInclude Include="SiteManager_PasswordsPage.h" />
+    <ClInclude Include="SiteManagerSheet.h" />
+    <ClInclude Include="Sites_AdvancedPage.h" />
+    <ClInclude Include="Sites_GeneralPage.h" />
+    <ClInclude Include="SitesSheet.h" />
+    <ClInclude Include="SitesWnd.h" />
+    <ClInclude Include="SmallTipWnd.h" />
+    <ClInclude Include="SpiderAddPageDlg.h" />
+    <ClInclude Include="SpiderTasks.h" />
+    <ClInclude Include="SpiderTaskTree.h" />
+    <ClInclude Include="SpiderWnd.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="supplier_interface.h" />
+    <ClInclude Include="system.h" />
+    <ClInclude Include="ToolBarEx.h" />
+    <ClInclude Include="Torrents_Tasks.h" />
+    <ClInclude Include="TorrentsWnd.h" />
+    <ClInclude Include="TreeCtrlEx.h" />
+    <ClInclude Include="UIThread.h" />
+    <ClInclude Include="UpdateDlg.h" />
+    <ClInclude Include="UploadsWnd.h" />
+    <ClInclude Include="UrlWithLoginDlg.h" />
+    <ClInclude Include="UrlWnd.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="UtorrentSupplier.h" />
+    <ClInclude Include="VideoWindow.h" />
+    <ClInclude Include="vms7zipArchive.h" />
+    <ClInclude Include="vms7zipArchiveExtractCallback.h" />
+    <ClInclude Include="vms7zipFormatDLL.h" />
+    <ClInclude Include="vmsAnimatedGIF.h" />
+    <ClInclude Include="vmsAppSettingsStore.h" />
+    <ClInclude Include="vmsAppTipsMgr.h" />
+    <ClInclude Include="vmsAppUtil.h" />
+    <ClInclude Include="vmsArchive.h" />
+    <ClInclude Include="vmsArchiveCallback.h" />
+    <ClInclude Include="vmsArchiveMgr.h" />
+    <ClInclude Include="vmsArchiveRAR.h" />
+    <ClInclude Include="vmsBatchList.h" />
+    <ClInclude Include="vmsBtDownloadManager.h" />
+    <ClInclude Include="vmsBtSupport.h" />
+    <ClInclude Include="vmsComDLL.h" />
+    <ClInclude Include="vmsDataFile.h" />
+    <ClInclude Include="vmsDialogHelper.h" />
+    <ClInclude Include="vmsDLL.h" />
+    <ClInclude Include="vmsDocHostUIHandler.h" />
+    <ClInclude Include="vmsDownloadMgrEx.h" />
+    <ClInclude Include="vmsDownloadsGroupsMgr.h" />
+    <ClInclude Include="vmsDownloadsListHelper.h" />
+    <ClInclude Include="vmsDrawHelper.h" />
+    <ClInclude Include="vmsFdmApiDownloadImpl.h" />
+    <ClInclude Include="vmsFdmApiDownloadsMgrImpl.h" />
+    <ClInclude Include="vmsFdmApiImpl.h" />
+    <ClInclude Include="vmsFdmAppMgr.h" />
+    <ClInclude Include="vmsFileExtensionInOs.h" />
+    <ClInclude Include="vmsFileRecentList.h" />
+    <ClInclude Include="vmsFilesToDelete.h" />
+    <ClInclude Include="vmsFirefoxMonitoring.h" />
+    <ClInclude Include="vmsFlvSniffInjector.h" />
+    <ClInclude Include="vmsIeHelper.h" />
+    <ClInclude Include="vmsImage.h" />
+    <ClInclude Include="vmsImage_CtxFree.h" />
+    <ClInclude Include="vmsInetUtils.h" />
+    <ClInclude Include="vmsInternetSession.h" />
+    <ClInclude Include="vmsIpHelper.h" />
+    <ClInclude Include="vmsMaliciousDownloadChecker.h" />
+    <ClInclude Include="vmsMaximumSpeedMeter.h" />
+    <ClInclude Include="vmsMediaConverter.h" />
+    <ClInclude Include="vmsMediaConvertMgr.h" />
+    <ClInclude Include="vmsMetalinkFile.h" />
+    <ClInclude Include="vmsMozillaPrefs.h" />
+    <ClInclude Include="vmsNotEverywhereSupportedFunctions.h" />
+    <ClInclude Include="vmsPersistableListOfDownloads.h" />
+    <ClInclude Include="vmsPersistObject.h" />
+    <ClInclude Include="vmsPluginSupport.h" />
+    <ClInclude Include="vmsProcessesInjector.h" />
+    <ClInclude Include="vmsRegisteredApp.h" />
+    <ClInclude Include="vmsRenderer.h" />
+    <ClInclude Include="vmsSecurity.h" />
+    <ClInclude Include="vmsSimpleFileDownloader.h" />
+    <ClInclude Include="vmsSingleLineTooltip.h" />
+    <ClInclude Include="vmsSkinMgr.h" />
+    <ClInclude Include="vmsSpeedTracker.h" />
+    <ClInclude Include="vmsStringList.h" />
+    <ClInclude Include="vmsStringParser.h" />
+    <ClInclude Include="vmsStringRecentList.h" />
+    <ClInclude Include="vmsSystem.h" />
+    <ClInclude Include="vmsTheme.h" />
+    <ClInclude Include="vmsTickCount.h" />
+    <ClInclude Include="vmsTorrentExtension.h" />
+    <ClInclude Include="vmsTrafficUsageModeMgr.h" />
+    <ClInclude Include="vmsTreeCtrlHelper.h" />
+    <ClInclude Include="vmsUiFonts.h" />
+    <ClInclude Include="vmsUiLinkWindow.h" />
+    <ClInclude Include="vmsUiStaticTextWindow.h" />
+    <ClInclude Include="vmsUiWindow.h" />
+    <ClInclude Include="vmsUiWindowsHoster.h" />
+    <ClInclude Include="vmsUnRARDLL.h" />
+    <ClInclude Include="vmsUploaderDllPersist.h" />
+    <ClInclude Include="vmsUploadsDllCaller.h" />
+    <ClInclude Include="vmsUploadsDllCallerSettings.h" />
+    <ClInclude Include="vmsURLDownloadMgr.h" />
+    <ClInclude Include="vmsValueLog.h" />
+    <ClInclude Include="vmsVideoMonitoringModulesManager.h" />
+    <ClInclude Include="vmsVideoMonitoringModulesUiManager.h" />
+    <ClInclude Include="vmsVideoMonitoringModulesUpdateManager.h" />
+    <ClInclude Include="vmsVideoSiteHtmlCodeParser.h" />
+    <ClInclude Include="vmsWebBrowserEvents.h" />
+    <ClInclude Include="vmsWwwResourceDownloader.h" />
+    <ClInclude Include="vmsXmlHelper.h" />
+    <ClInclude Include="vmsYouTubeAfterMergeAction.h" />
+    <ClInclude Include="vmsYouTubeDownloadsMgr.h" />
+    <ClInclude Include="vmsYouTubeParserDllMgr.h" />
+    <ClInclude Include="vmsYouTubeParserErrorSender.h" />
+    <ClInclude Include="vmsYouTubeParserErrorSenderPOST.h" />
+    <ClInclude Include="vmsYouTubeParserObjectsHolder.h" />
+    <ClInclude Include="vmsYouTubePreviewIconLoader.h" />
+    <ClInclude Include="vmsYouTubeURLReloadingTask.h" />
+    <ClInclude Include="WaitDlg.h" />
+    <ClInclude Include="WaitDlg2.h" />
+    <ClInclude Include="WaitForConfirmationDlg.h" />
+    <ClInclude Include="webbrowser2.h" />
+    <ClInclude Include="WebBrowser2Customization.h" />
+    <ClInclude Include="WgUrlListReceiver.h" />
+    <ClInclude Include="WGUrlReceiver.h" />
+    <ClInclude Include="Wnd_Banner.h" />
+    <ClInclude Include="Wnd_DownloadProgress.h" />
+    <ClInclude Include="Wnd_FDMGetCustVer_Btn.h" />
+    <ClInclude Include="WndDlDoneNotification.h" />
+    <ClInclude Include="WndLog.h" />
+    <ClInclude Include="WndSplitter.h" />
+    <ClInclude Include="WPDS_FilesPage.h" />
+    <ClInclude Include="WPDS_GeneralPage.h" />
+    <ClInclude Include="WPDS_ImagesPages.h" />
+    <ClInclude Include="WPDS_Sheet.h" />
+    <ClInclude Include="WPDS_WebPagesPage.h" />
+    <ClInclude Include="XInfoTip.h" />
+    <ClInclude Include="ZipPreviewDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\back.bmp" />
+    <CustomBuild Include="res\back_d.bmp" />
+    <CustomBuild Include="res\checks.bmp" />
+    <CustomBuild Include="res\choosefolder.ico" />
+    <CustomBuild Include="res\close.bmp" />
+    <CustomBuild Include="res\closebtn.ico" />
+    <CustomBuild Include="res\creategr.ico" />
+    <CustomBuild Include="res\dldsinfo.bmp" />
+    <CustomBuild Include="res\dldsinfo_sel.bmp" />
+    <CustomBuild Include="res\dldtasks_sel.bmp" />
+    <CustomBuild Include="res\download.bmp" />
+    <CustomBuild Include="res\downloadstasks.bmp" />
+    <CustomBuild Include="res\dropbox.ico" />
+    <CustomBuild Include="res\eng_lngs.bin">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="res\Fdm.ico" />
+    <CustomBuild Include="res\fdm.rc2">
+      <FileType>RC</FileType>
+    </CustomBuild>
+    <CustomBuild Include="FDM.rgs" />
+    <CustomBuild Include="res\fdm_getcver_btn.bmp" />
+    <CustomBuild Include="FdmApp.rgs" />
+    <CustomBuild Include="FDMDownload.rgs" />
+    <CustomBuild Include="FDMDownloadsStat.rgs" />
+    <CustomBuild Include="FDMFlashVideoDownloads.rgs" />
+    <CustomBuild Include="FdmFlvDownload.rgs" />
+    <CustomBuild Include="FdmTorrentFilesRcvr.rgs" />
+    <CustomBuild Include="FDMUploader.rgs" />
+    <CustomBuild Include="FDMUploadPackage.rgs" />
+    <CustomBuild Include="res\filelist.bmp" />
+    <CustomBuild Include="res\filelist_sel.bmp" />
+    <CustomBuild Include="res\go.bmp" />
+    <CustomBuild Include="res\groups.bmp" />
+    <CustomBuild Include="res\groupsmenu_d.bmp" />
+    <CustomBuild Include="res\grpmenu.bmp" />
+    <CustomBuild Include="res\hand.cur" />
+    <CustomBuild Include="res\login.ico" />
+    <CustomBuild Include="res\logo2.ico" />
+    <CustomBuild Include="res\logstat.bmp" />
+    <CustomBuild Include="res\mute.bmp" />
+    <CustomBuild Include="res\scheduler_sel.bmp" />
+    <CustomBuild Include="res\setfolderdef.ico" />
+    <CustomBuild Include="res\settime.ico" />
+    <CustomBuild Include="res\sheduler.bmp" />
+    <CustomBuild Include="res\sitelist.bmp" />
+    <CustomBuild Include="res\sitelist_sel.bmp" />
+    <CustomBuild Include="res\sortimages.bmp" />
+    <CustomBuild Include="res\test_ok.ico" />
+    <CustomBuild Include="res\tip.bmp" />
+    <CustomBuild Include="res\tool0.bmp" />
+    <CustomBuild Include="res\tool0_16.bmp" />
+    <CustomBuild Include="res\tool0_16_d.bmp" />
+    <CustomBuild Include="res\tool0_d.bmp" />
+    <CustomBuild Include="res\tool_bt.bmp" />
+    <CustomBuild Include="res\tool_bt_16.bmp" />
+    <CustomBuild Include="res\tool_bt_16_d.bmp" />
+    <CustomBuild Include="res\tool_bt_d.bmp" />
+    <CustomBuild Include="res\tool_dld.bmp" />
+    <CustomBuild Include="res\tool_dld_16.bmp" />
+    <CustomBuild Include="res\tool_dld_16_d.bmp" />
+    <CustomBuild Include="res\tool_hfe.bmp" />
+    <CustomBuild Include="res\tool_hfe_16.bmp" />
+    <CustomBuild Include="res\tool_hfe_16_d.bmp" />
+    <CustomBuild Include="res\tool_sch.bmp" />
+    <CustomBuild Include="res\tool_sch_16.bmp" />
+    <CustomBuild Include="res\tool_sch_16_d.bmp" />
+    <CustomBuild Include="res\tool_sites.bmp" />
+    <CustomBuild Include="res\tool_sites_16.bmp" />
+    <CustomBuild Include="res\tool_sites_16_d.bmp" />
+    <CustomBuild Include="res\tool_sites_d.bmp" />
+    <CustomBuild Include="res\tool_spider.bmp" />
+    <CustomBuild Include="res\tool_spider_16.bmp" />
+    <CustomBuild Include="res\tool_spider_16_d.bmp" />
+    <CustomBuild Include="res\tool_spider_d.bmp" />
+    <CustomBuild Include="res\tooldlds_d.bmp" />
+    <CustomBuild Include="res\toolhfe_d.bmp" />
+    <CustomBuild Include="res\toolschedule_d.bmp" />
+    <CustomBuild Include="res\tosel.ico" />
+    <CustomBuild Include="res\tounsel.ico" />
+    <CustomBuild Include="res\tray.ico" />
+    <CustomBuild Include="res\tray_dow.ico" />
+    <CustomBuild Include="res\tray_err.ico" />
+    <CustomBuild Include="res\tray_unk.ico" />
+    <CustomBuild Include="res\vidman.bmp" />
+    <CustomBuild Include="res\vidman_d.bmp" />
+    <CustomBuild Include="WgUrlListReceiver.rgs" />
+    <CustomBuild Include="WGUrlReceiver.rgs" />
+    <CustomBuild Include="Language\eng.lng">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FdmUiWindow.rgs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="fdm.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
